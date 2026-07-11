@@ -610,6 +610,12 @@ Os screenshots abaixo ficam salvos na pasta [`/prints`](./prints) deste reposit�
 ### Dashboard
 ![Dashboard](./prints/dashboard.png)
 
+### Cadastro de Jogadores
+![Cadastro de Jogadores](./prints/jogadores.png)
+
+### Cadastro de Quadras
+![Cadastro de Quadras](./prints/quadras.png)
+
 ### Reservas — bloqueio de conflito de horário
 ![Conflito de horário](./prints/reservas-conflito-horario.png)
 
