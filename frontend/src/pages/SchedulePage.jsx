@@ -4,7 +4,29 @@ import reservationService from '../services/reservation.service';
 import Loading from '../components/common/Loading';
 import styles from './SchedulePage.module.css';
 
-const HOURS = Array.from({ length: 17 }, (_, i) => i + 6); // 06h às 22h
+// Gera os slots de 30 em 30 minutos das 06:00 até 22:00
+function generate30MinSlots() {
+  const slots = [];
+  for (let hour = 6; hour <= 22; hour++) {
+    const h = String(hour).padStart(2, '0');
+    slots.push(`${h}:00`);
+    if (hour < 22) {
+      slots.push(`${h}:30`);
+    }
+  }
+  return slots;
+}
+
+const SLOTS = generate30MinSlots();
+
+// Função auxiliar para somar 30 minutos a um horário "HH:mm"
+function add30Minutes(timeStr) {
+  const [h, m] = timeStr.split(':').map(Number);
+  if (m === 0) {
+    return `${String(h).padStart(2, '0')}:30`;
+  }
+  return `${String(h + 1).padStart(2, '0')}:00`;
+}
 
 function todayISO() {
   return new Date().toISOString().slice(0, 10);
@@ -33,10 +55,12 @@ export default function SchedulePage() {
       .finally(() => setLoading(false));
   }, [courtId, date]);
 
-  // Função ajustada para evitar duplicação de slots em horários quebrados
-  const isOccupied = (hour) => {
-    const hourString = `${String(hour).padStart(2, '0')}:00`;
-    return reservations.find((r) => r.startTime <= hourString && r.endTime > hourString);
+  // Verifica qual reserva ocupa o bloco atual de 30min
+  const getReservationForSlot = (slotStart) => {
+    const slotEnd = add30Minutes(slotStart);
+    return reservations.find(
+      (r) => r.startTime < slotEnd && r.endTime > slotStart
+    );
   };
 
   const selectedCourt = courts.find((c) => c.id === courtId);
@@ -77,17 +101,19 @@ export default function SchedulePage() {
           </div>
 
           <div className={styles.grid}>
-            {HOURS.map((hour) => {
-              const reservation = isOccupied(hour);
+            {SLOTS.map((slotStart) => {
+              const reservation = getReservationForSlot(slotStart);
               return (
                 <div
-                  key={hour}
-                  className={`${styles.cell} ${reservation ? styles.cellOccupied : styles.cellFree}`}
+                  key={slotStart}
+                  className={`${styles.cell} ${
+                    reservation ? styles.cellOccupied : styles.cellFree
+                  }`}
                 >
                   <span className={styles.cellHour}>
                     {reservation
                       ? `${reservation.startTime} - ${reservation.endTime}`
-                      : `${String(hour).padStart(2, '0')}:00`}
+                      : slotStart}
                   </span>
                   <span className={styles.cellStatus}>
                     {reservation ? reservation.player?.name : 'Livre'}
