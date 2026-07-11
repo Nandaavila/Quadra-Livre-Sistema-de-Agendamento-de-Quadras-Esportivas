@@ -1,0 +1,53 @@
+.page {
+  padding: var(--space-7) var(--space-5) var(--space-9);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.title {
+  font-size: 40px;
+}
+
+.subtitle {
+  color: var(--color-ink-soft);
+}
+
+.filters {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+}
+
+.filters .input,
+.filters select {
+  max-width: 220px;
+}
+
+.clearFilters {
+  background: none;
+  border: none;
+  color: var(--color-court-blue);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.empty {
+  color: var(--color-ink-faint);
+  padding: var(--space-7) 0;
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}

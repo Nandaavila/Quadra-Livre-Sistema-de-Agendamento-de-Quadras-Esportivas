@@ -1,0 +1,181 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  background: var(--color-court-green-dark);
+  color: #fff;
+  overflow: hidden;
+  padding: var(--space-9) 0 var(--space-8);
+}
+
+.courtLines {
+  position: absolute;
+  top: 50%;
+  right: -120px;
+  transform: translateY(-50%);
+  width: 640px;
+  height: 640px;
+  color: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-amber);
+  margin-bottom: var(--space-4);
+}
+
+.headline {
+  font-size: clamp(42px, 7vw, 72px);
+  line-height: 0.98;
+  color: #fff;
+  margin-bottom: var(--space-5);
+}
+
+.subhead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 480px;
+  margin-bottom: var(--space-6);
+}
+
+.heroActions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.primaryCta,
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 var(--space-6);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 15px;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.primaryCta {
+  background: var(--color-amber);
+  color: var(--color-ink);
+}
+.primaryCta:hover {
+  background: #ffbf4d;
+}
+
+.secondaryCta {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+.secondaryCta:hover {
+  border-color: #fff;
+}
+
+/* ── Seções gerais ── */
+.sectionTitle {
+  font-size: 32px;
+  letter-spacing: 0.03em;
+  margin-bottom: var(--space-6);
+}
+
+.steps {
+  padding: var(--space-9) var(--space-5);
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.step {
+  border-top: 3px solid var(--color-court-green);
+  padding-top: var(--space-4);
+}
+
+.stepNumber {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-amber-dark);
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.stepTitle {
+  font-size: 24px;
+  margin-bottom: var(--space-2);
+}
+
+.stepText {
+  color: var(--color-ink-soft);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ── Modalidades ── */
+.sportsSection {
+  padding-bottom: var(--space-9);
+}
+
+.sportsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.sportChip {
+  background: var(--color-court-blue-light);
+  color: var(--color-court-blue-dark);
+  font-weight: 600;
+  font-size: 14px;
+  padding: var(--space-2) var(--space-4);
+  border-radius: 999px;
+}
+
+/* ── CTA final ── */
+.ctaBanner {
+  background: var(--color-ink);
+  padding: var(--space-8) 0;
+}
+
+.ctaBannerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.ctaBannerTitle {
+  font-size: 30px;
+  color: #fff;
+  max-width: 460px;
+}
+
+@media (max-width: 820px) {
+  .stepsGrid {
+    grid-template-columns: 1fr;
+  }
+  .courtLines {
+    opacity: 0.5;
+  }
+}

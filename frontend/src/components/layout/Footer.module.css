@@ -1,0 +1,23 @@
+.footer {
+  background: var(--color-ink);
+  color: #fff;
+  padding: var(--space-6) 0;
+  margin-top: var(--space-9);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 0.03em;
+}
+
+.tagline {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}

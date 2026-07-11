@@ -1,0 +1,147 @@
+.page {
+  padding: var(--space-7) var(--space-5) var(--space-9);
+}
+
+.title {
+  font-size: 40px;
+}
+
+.subtitle {
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-6);
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-7);
+}
+
+.kpiCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  border-top: 4px solid var(--color-court-green);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  box-shadow: var(--shadow-sm);
+}
+
+.accent-green {
+  border-top-color: var(--color-court-green);
+}
+.accent-blue {
+  border-top-color: var(--color-court-blue);
+}
+.accent-amber {
+  border-top-color: var(--color-amber);
+}
+.accent-coral {
+  border-top-color: var(--color-coral);
+}
+
+.kpiValue {
+  font-family: var(--font-display);
+  font-size: 44px;
+  line-height: 1;
+}
+
+.kpiLabel {
+  font-size: 13px;
+  color: var(--color-ink-soft);
+  font-weight: 600;
+}
+
+.sectionRow {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-5);
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.cardTitle {
+  font-size: 20px;
+  margin-bottom: var(--space-4);
+}
+
+.empty {
+  color: var(--color-ink-faint);
+  font-size: 14px;
+}
+
+.barList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: 110px 1fr 24px;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.barLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
+
+.barTrack {
+  height: 8px;
+  background: var(--color-surface-alt);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: var(--color-court-green);
+  border-radius: 4px;
+}
+
+.barValue {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-align: right;
+}
+
+.todayList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.todayItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 14px;
+}
+
+.todayTime {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  background: var(--color-ink);
+  color: #ffe9b8;
+  padding: 2px var(--space-2);
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sectionRow {
+    grid-template-columns: 1fr;
+  }
+}

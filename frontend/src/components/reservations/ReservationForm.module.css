@@ -1,0 +1,16 @@
+.timeRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.conflictBanner {
+  background: var(--color-coral-light);
+  color: var(--color-coral);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: var(--space-4);
+  line-height: 1.5;
+}

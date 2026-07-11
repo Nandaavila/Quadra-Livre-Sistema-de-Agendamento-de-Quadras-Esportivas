@@ -1,0 +1,40 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.error {
+  font-size: 13px;
+  color: var(--color-coral);
+}
+
+/* Classe global exportada para inputs/selects usarem o mesmo visual */
+:global(.input) {
+  height: 44px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-line);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: 15px;
+  transition: border-color 0.12s ease;
+}
+
+:global(.input:focus) {
+  border-color: var(--color-court-green);
+  outline: none;
+}
+
+:global(.input.invalid) {
+  border-color: var(--color-coral);
+}
