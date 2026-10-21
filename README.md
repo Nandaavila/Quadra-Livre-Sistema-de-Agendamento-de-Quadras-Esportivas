@@ -309,7 +309,7 @@ Os screenshots abaixo ficam salvos na pasta [`/prints`](./prints) deste reposit�
 ![Cadastro de Quadras](./prints/quadras.png)
 
 ### Reservas — bloqueio de conflito de horário
-![Conflito de horário](./prints/reservas-conflito-horario.png)
+![Conflito de horário](./prints/reservas.png)
 
 ### Agenda — horários livres e ocupados
 ![Agenda](./prints/agenda.png)
